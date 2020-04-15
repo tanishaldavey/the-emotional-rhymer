@@ -5,12 +5,28 @@ class SearchForm extends Component {
   constructor() {
     super();
     this.state = {
-      queriedWord: ''
+      query: ''
     }
   }
   render() {
     return(
       <form>
+        <input
+          type='text'
+          placeholder='What word rhymes with...'
+          name='query'
+          value={this.state.query}
+          required
+        />
+        <button
+          type='button'
+        >Submit
+        </button>
+        <button
+          type='button'
+        >Recent Searches
+        </button>
+
       </form>
     )
   }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { getRhymes } from '../../actions';
+import { connect } from 'react-redux';
 import './SearchForm.css';
 
 class SearchForm extends Component {
@@ -11,6 +13,8 @@ class SearchForm extends Component {
   updateValue = e => {
     this.setState({ [e.target.name]: e.target.value })
   }
+
+
   render() {
     return(
       <form>
@@ -36,5 +40,8 @@ class SearchForm extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  getRhymes: allRhymes => ( getRhymes(allRhymes) )
+})
 
-export default SearchForm;
+export default connect(null, mapDispatchToProps)(SearchForm);

@@ -8,6 +8,9 @@ class SearchForm extends Component {
       query: ''
     }
   }
+  updateValue = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
   render() {
     return(
       <form>
@@ -17,6 +20,7 @@ class SearchForm extends Component {
           name='query'
           value={this.state.query}
           required
+          onChange={this.updateValue}
         />
         <button
           type='button'

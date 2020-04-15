@@ -1,11 +1,16 @@
 import React from 'react';
+import Navigation from '../Navigation/Navigation';
+import Header from '../Header/Header';
+import SearchForm from '../../containers/SearchForm/SearchForm'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-    
-    </div>
+    <main className="App">
+      <Navigation />
+      <Header />
+      <SearchForm />
+    </main>
   );
 }
 

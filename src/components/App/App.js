@@ -14,7 +14,7 @@ function App() {
       <Header />
       <SearchForm />
       <Route path='/:word/rhymes' render={() => <RhymesContainer />} />
-      <Route path='/:word/rhymes/:otherWord/word-details' render={() => <WordDetailsContainer />} />
+      <Route exact path='/:word/rhymes/:otherWord/word-details' render={() => <WordDetailsContainer />} />
     </main>
   );
 }

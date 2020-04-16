@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './WordDetailsContainer.css';
+import './WordDetails.css';
 
-const WordDetailsContainer = ({ wordDetails }) => {
+const WordDetails = ({ wordDetails }) => {
   return(
     <section>
     <h3>{wordDetails.word}</h3>
@@ -19,4 +19,4 @@ const mapStateToProps = state => ({
   wordDetails: state.wordDetails
 })
 
-export default connect(mapStateToProps)(WordDetailsContainer)
+export default connect(mapStateToProps)(WordDetails)

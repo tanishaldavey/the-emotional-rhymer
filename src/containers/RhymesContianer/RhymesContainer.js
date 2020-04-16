@@ -3,10 +3,15 @@ import './RhymesContainer.css';
 import { connect } from 'react-redux';
 
 const RhymesContainer = () => {
+
   return(
     <ul>
     </ul>
   )
 }
 
-export default RhymesContainer;
+const mapStateToProps = state =({
+  rhymes: state.rhymes
+})
+
+export default connect(mapStateToProps)(RhymesContainer);

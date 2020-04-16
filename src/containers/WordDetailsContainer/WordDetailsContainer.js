@@ -3,9 +3,13 @@ import { connect } from 'react-redux';
 import './WordDetailsContainer.css';
 
 const WordDetailsContainer = (props) => {
-  console.log(props);
   return(
     <section>
+    <p>I am here.</p>
+      <p>{props.wordDetails.partOfSpeech}</p>
+      <p>{props.wordDetails.definition}</p>
+      <p>Example of usage:</p>
+      <p>{props.wordDetails.examples}</p>
     </section>
   )
 }

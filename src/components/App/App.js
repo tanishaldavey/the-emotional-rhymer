@@ -12,7 +12,9 @@ function App() {
       <Navigation />
       <Header />
       <SearchForm />
-      <Route path='/rhymes' render={() => <RhymesContainer />} />
+      <Route path='/:word/rhymes' render={({ match }) => <RhymesContainer
+        match={match}
+      />} />
     </main>
   );
 }

@@ -53,7 +53,7 @@ class SearchForm extends Component {
           required
           onChange={this.updateValue}
         />
-        <Link to='/rhymes'>
+        <Link to={`/${this.state.query}/rhymes`}>
           <button
             type='button'
             onClick={this.validateForm}

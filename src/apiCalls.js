@@ -10,7 +10,7 @@ export const findRhymingWords = async (word) => {
 
 export const findWordDetails = async (word) => {
   try {
-    let response = fetch('https://wordsapiv1.p.mashape.com/words/true', {
+    let response = await fetch(`https://wordsapiv1.p.mashape.com/words/${word}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ export const getWordDetails = wordDetails => ({
   wordDetails
 })
 
-export const getRecentSearches = word => ({
+export const getRecentSearches = recentSearch => ({
   type:'GET_RECENT_SEARCHES',
-  word
+  recentSearch
 })

@@ -9,6 +9,7 @@ const WordDetailsContainer = ({ wordDetails }) => {
     <p>{wordDetails.partOfSpeech}</p>
     <p>{wordDetails.definition}</p>
     <p>Example of usage:</p>
+    {!Array.isArray(wordDetails.examples) && <p>We didn't find a usage example for this particular definition of {wordDetails.word}. Try refreshing the page for an updated definition.</p>}
     <p>{wordDetails.examples}</p>
     </section>
   )

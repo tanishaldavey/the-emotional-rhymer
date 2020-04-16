@@ -1,5 +1,6 @@
 import React from 'react';
 import Rhymes from '../../components/Rhymes/Rhymes';
+import { Link } from 'react-router-dom';
 import './RhymesContainer.css';
 import { connect } from 'react-redux';
 
@@ -13,6 +14,9 @@ const RhymesContainer = ({ rhymes, queriedWord }) => {
 
   return(
     <section>
+      <Link to='/'>
+        <p>Back</p>
+      </Link>
       <h3>{ queriedWord }</h3>
       <ul>
         { allRhymes }

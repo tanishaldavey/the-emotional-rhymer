@@ -60,10 +60,12 @@ class SearchForm extends Component {
           >Submit
           </button>
         </Link>
-        <button
-          type='button'
-        >Recent Searches
-        </button>
+        <Link to='/recentSearches'>
+          <button
+            type='button'
+          >Recent Searches
+          </button>
+        </Link>
       </form>
     )
   }

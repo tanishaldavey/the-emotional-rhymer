@@ -3,7 +3,7 @@ import Rhymes from '../../components/Rhymes/Rhymes';
 import './RhymesContainer.css';
 import { connect } from 'react-redux';
 
-const RhymesContainer = ({ rhymes }) => {
+const RhymesContainer = ({ rhymes, queriedWord }) => {
   const allRhymes = rhymes.map(rhyme => {
     return <Rhymes
       key={rhyme.score}
@@ -12,14 +12,18 @@ const RhymesContainer = ({ rhymes }) => {
   })
 
   return(
-    <ul>
-      { allRhymes }
-    </ul>
+    <section>
+      <h3>{ queriedWord }</h3>
+      <ul>
+        { allRhymes }
+      </ul>
+    </section>
   )
 }
 
 const mapStateToProps = state => ({
-  rhymes: state.rhymes
+  rhymes: state.rhymes,
+  queriedWord: state.queriedWord
 })
 
 export default connect(mapStateToProps)(RhymesContainer);

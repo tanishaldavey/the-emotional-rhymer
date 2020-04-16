@@ -9,12 +9,23 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: ''
+      query: '',
+      error: ''
     }
   }
 
   updateValue = e => {
     this.setState({ [e.target.name]: e.target.value })
+  }
+
+  validateForm = e => {
+    if (this.state.query === '') {
+      e.preventDefault();
+      this.setState({ error: 'Form must be filled out to begin a search.' })
+    } else {
+      this.setState({ error: '' })
+      this.submit();
+    }
   }
 
   submit = () => {
@@ -33,6 +44,7 @@ class SearchForm extends Component {
   render() {
     return(
       <form>
+      {this.state.error && <p>{this.state.error}</p>}
         <input
           type='text'
           placeholder='What word rhymes with...'
@@ -44,7 +56,7 @@ class SearchForm extends Component {
         <Link to='/rhymes'>
           <button
             type='button'
-            onClick={this.submit}
+            onClick={this.validateForm}
           >Submit
           </button>
         </Link>
@@ -52,7 +64,6 @@ class SearchForm extends Component {
           type='button'
         >Recent Searches
         </button>
-
       </form>
     )
   }

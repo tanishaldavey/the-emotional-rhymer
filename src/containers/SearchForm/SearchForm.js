@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
+import { findRhymingWords } from '../../apiCalls';
 import { getRhymes } from '../../actions';
 import { connect } from 'react-redux';
 import './SearchForm.css';
 
 class SearchForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       query: ''
     }
   }
+
   updateValue = e => {
     this.setState({ [e.target.name]: e.target.value })
+  }
+
+  submit = () => {
+    findRhymingWords(this.state.query)
+      .then(rhymesFound => this.props.getRhymes(rhymesFound))
+      .then(this.clearInput())
+      .catch(error => console.log(error.message))
+  }
+
+  clearInput = () => {
+    this.setState({ query: '' })
   }
 
 
@@ -28,6 +41,7 @@ class SearchForm extends Component {
         />
         <button
           type='button'
+          onClick={this.submit}
         >Submit
         </button>
         <button
@@ -41,7 +55,7 @@ class SearchForm extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getRhymes: allRhymes => ( getRhymes(allRhymes) )
+  getRhymes: allRhymes => dispatch( getRhymes(allRhymes) )
 })
 
 export default connect(null, mapDispatchToProps)(SearchForm);

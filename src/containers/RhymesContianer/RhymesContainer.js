@@ -18,6 +18,7 @@ const RhymesContainer = ({ rhymes, queriedWord }) => {
         <p>Back</p>
       </Link>
       <h3>{ queriedWord }</h3>
+      {!rhymes.length && <p>There are no rhymes related to <span>emotion</span> for that word.</p>}
       <ul>
         { allRhymes }
       </ul>

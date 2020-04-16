@@ -7,3 +7,8 @@ export const getQueriedWord = queriedWord => ({
   type: 'GET_QUERIED_WORD',
   queriedWord
 })
+
+export const getWordDetails = wordDetails => ({
+  type: 'GET_WORD_DETAILS',
+  wordDetails
+})

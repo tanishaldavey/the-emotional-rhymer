@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { findRhymingWords } from '../../apiCalls';
 import { getRhymes } from '../../actions';
 import { connect } from 'react-redux';
@@ -39,11 +40,13 @@ class SearchForm extends Component {
           required
           onChange={this.updateValue}
         />
-        <button
-          type='button'
-          onClick={this.submit}
-        >Submit
-        </button>
+        <Link to='/rhymes'>
+          <button
+            type='button'
+            onClick={this.submit}
+          >Submit
+          </button>
+        </Link>
         <button
           type='button'
         >Recent Searches

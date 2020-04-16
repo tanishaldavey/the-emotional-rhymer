@@ -10,7 +10,6 @@ const Rhymes = ({ rhyme, getWordDetails, queriedWord }) => {
     findWordDetails(rhyme)
       .then(details => {
         const randomIndex = Math.floor(Math.random() * details.results.length)
-        console.log(randomIndex)
         getWordDetails(details.results[randomIndex])
       })
   }

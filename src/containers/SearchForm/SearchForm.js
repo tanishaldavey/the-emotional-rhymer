@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { findRhymingWords } from '../../apiCalls';
-import { getRhymes } from '../../actions';
+import { getRhymes, getQueriedWord } from '../../actions';
 import { connect } from 'react-redux';
 import './SearchForm.css';
 
@@ -18,6 +18,7 @@ class SearchForm extends Component {
   }
 
   submit = () => {
+    this.props.getQueriedWord(this.state.query)
     findRhymingWords(this.state.query)
       .then(rhymesFound => this.props.getRhymes(rhymesFound))
       .then(this.clearInput())
@@ -58,7 +59,8 @@ class SearchForm extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getRhymes: allRhymes => dispatch( getRhymes(allRhymes) )
+  getRhymes: allRhymes => dispatch( getRhymes(allRhymes) ),
+  getQueriedWord: word => dispatch( getQueriedWord(word) )
 })
 
 export default connect(null, mapDispatchToProps)(SearchForm);

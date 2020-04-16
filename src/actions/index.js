@@ -3,7 +3,7 @@ export const getRhymes = rhymes => ({
   rhymes
 });
 
-export const getQueriedWrod = queriedWord => ({
+export const getQueriedWord = queriedWord => ({
   type: 'GET_QUERIED_WORD',
   queriedWord
 })

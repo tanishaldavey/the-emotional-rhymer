@@ -3,7 +3,7 @@ import Navigation from '../Navigation/Navigation';
 import Header from '../Header/Header';
 import SearchForm from '../../containers/SearchForm/SearchForm'
 import RhymesContainer from '../../containers/RhymesContianer/RhymesContainer';
-import WordDetailsContainer from '../../containers/WordDetailsContainer/WordDetailsContainer';
+import WordDetails from '../../containers/WordDetails/WordDetails';
 import { Route } from 'react-router-dom';
 import './App.css';
 
@@ -13,8 +13,8 @@ function App() {
       <Navigation />
       <Header />
       <SearchForm />
-      <Route path='/:word/rhymes' render={() => <RhymesContainer />} />
-      <Route path='/:word/rhymes/:otherWord/word-details' render={() => <WordDetailsContainer />} />
+      <Route exact path='/:word/rhymes' render={() => <RhymesContainer />} />
+      <Route exact path='/:word/rhymes/:otherWord/word-details' render={() => <WordDetails />} />
     </main>
   );
 }

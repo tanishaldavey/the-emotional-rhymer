@@ -7,3 +7,18 @@ export const findRhymingWords = async (word) => {
     return error.message
   }
 }
+
+export const findWordDetails = async (word) => {
+  try {
+    let response = fetch('https://wordsapiv1.p.mashape.com/words/true', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Mashape-Key': '0c23c2afbdmsh9b5a46a83cc75e1p1e9e8ejsn569db86987ef'
+      }
+    })
+    return await response.json()
+  } catch (error) {
+    return error.message
+  }
+}

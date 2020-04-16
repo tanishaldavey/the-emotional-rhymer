@@ -5,7 +5,7 @@ import { getWordDetails } from '../../actions';
 import { connect } from 'react-redux';
 import './Rhymes.css';
 
-const Rhymes = ({ rhyme, getWordDetails }) => {
+const Rhymes = ({ rhyme, getWordDetails, queriedWord }) => {
   const updateWordDetails = () => {
     findWordDetails(rhyme)
       .then(details => {
@@ -15,14 +15,18 @@ const Rhymes = ({ rhyme, getWordDetails }) => {
       })
   }
   return(
-    <Link to='word-details'>
+    <Link to={`/${queriedWord}/rhymes/${rhyme}/word-details`}>
       <li onClick={updateWordDetails}>{rhyme}</li>
     </Link>
   )
 }
 
+const mapStateToProps = state => ({
+  queriedWord: state.queriedWord
+})
+
 const mapDispatchToProps = dispatch => ({
   getWordDetails: details => dispatch( getWordDetails(details) )
 })
 
-export default connect(null, mapDispatchToProps)(Rhymes);
+export default connect(mapStateToProps, mapDispatchToProps)(Rhymes);

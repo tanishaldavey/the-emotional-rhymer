@@ -41,7 +41,7 @@ describe('rhymes', () => {
     expect(result).toEqual(expectedResult)
   });
 
-  it('should be able to replace the current value in state', () => {
+  it('should be able to have only one array in state at a time', () => {
     const expectedResult = [
       {
         word: 'sign',

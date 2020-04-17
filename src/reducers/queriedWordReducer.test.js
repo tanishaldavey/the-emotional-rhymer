@@ -17,7 +17,7 @@ describe('queriedWord', () => {
     expect(result).toEqual(expectedResult)
   });
 
-  it('should replace the current value in state', () => {
+  it('should be able to have only one string in state at a time', () => {
     const expectedResult = 'cheer'
 
     const result = queriedWord('long', {type: 'GET_QUERIED_WORD', queriedWord: 'cheer'})

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { findRhymingWords } from '../../apiCalls';
-import { getRhymes, getQueriedWord } from '../../actions';
+import { getRhymes, getQueriedWord, getRecentSearches } from '../../actions';
 import { connect } from 'react-redux';
 import './SearchForm.css';
 
@@ -29,11 +29,29 @@ class SearchForm extends Component {
   }
 
   submit = () => {
+    this.updateRecentSearches()
     this.props.getQueriedWord(this.state.query)
     findRhymingWords(this.state.query)
       .then(rhymesFound => this.props.getRhymes(rhymesFound))
       .then(this.clearInput())
       .catch(error => console.log(error.message))
+  }
+
+  updateRecentSearches = () => {
+    if (this.props.recentSearches.length === 10) {
+      this.props.recentSearches.pop()
+      const updatedRecentSearches = [
+        this.state.query,
+        ...this.props.recentSearches
+      ]
+      this.props.getRecentSearches(updatedRecentSearches)
+    } else {
+      const updatedRecentSearches = [
+        this.state.query,
+        ...this.props.recentSearches
+      ]
+      this.props.getRecentSearches(updatedRecentSearches)
+    }
   }
 
   clearInput = () => {
@@ -60,18 +78,26 @@ class SearchForm extends Component {
           >Submit
           </button>
         </Link>
-        <button
-          type='button'
-        >Recent Searches
-        </button>
+        <Link to='/recentSearches'>
+          <button
+            type='button'
+          >Recent Searches
+          </button>
+        </Link>
       </form>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  getRhymes: allRhymes => dispatch( getRhymes(allRhymes) ),
-  getQueriedWord: word => dispatch( getQueriedWord(word) )
+const mapStateToProps = state => ({
+  recentSearches: state.recentSearches
 })
 
-export default connect(null, mapDispatchToProps)(SearchForm);
+const mapDispatchToProps = dispatch => ({
+  getRhymes: allRhymes => dispatch( getRhymes(allRhymes) ),
+  getQueriedWord: word => dispatch( getQueriedWord(word) ),
+  getRecentSearches: recentSearchValue =>
+    dispatch( getRecentSearches(recentSearchValue) )
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);

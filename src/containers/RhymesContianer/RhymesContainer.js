@@ -15,7 +15,7 @@ const RhymesContainer = ({ rhymes, queriedWord }) => {
   return(
     <section>
       <Link to='/'>
-        <p>Back</p>
+        <p>Home</p>
       </Link>
       <h3>{ queriedWord }</h3>
       {!rhymes.length && <p>There are no rhymes related to <span>emotion</span> for that word.</p>}

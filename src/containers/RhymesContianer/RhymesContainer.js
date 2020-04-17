@@ -1,5 +1,5 @@
 import React from 'react';
-import Rhymes from '../../components/Rhymes/Rhymes';
+import Rhymes from '../Rhymes/Rhymes';
 import { Link } from 'react-router-dom';
 import './RhymesContainer.css';
 import { connect } from 'react-redux';

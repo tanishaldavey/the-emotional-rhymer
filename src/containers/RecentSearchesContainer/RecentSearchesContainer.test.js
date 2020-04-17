@@ -34,4 +34,17 @@ describe('RecentSearchesContainer', () => {
 
     expect(errorHandlingMessage).toBeInTheDocument()
   });
+
+  it('should render a list of past searches', () => {
+    testStore.dispatch({
+      type: 'GET_RECENT_SEARCHES',
+      recentSearches: ['pie', 'live', 'hello']
+    })
+
+    const { getByText } = testWrapper
+
+    const text = getByText('pie', 'live', 'hello')
+
+    expect(text).toBeInTheDocument()
+  });
 });

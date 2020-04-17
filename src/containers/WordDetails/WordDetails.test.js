@@ -63,4 +63,12 @@ describe('WordDetails', () => {
 
     expect(errorHandlingMessage).toBeInTheDocument()
   });
+
+  it('should render a link to go to the homepage', () => {
+    const { getByRole } = testWrapper
+
+    const homeLink = getByRole('link', 'Home')
+
+    expect(homeLink).toBeInTheDocument();
+  })
 })

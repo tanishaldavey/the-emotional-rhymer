@@ -52,4 +52,32 @@ describe('RhymesContainer', () => {
     expect(queriedWord).toBeInTheDocument()
     expect(rhymes).toBeInTheDocument()
   });
+
+  it('should render a message letting a user know if there were no rhymes found for the queried word', () => {
+    testStore.dispatch({
+      type: 'GET_QUERIED_WORD',
+      queriedWord: 'line'
+    })
+
+    testStore.dispatch({
+      type: 'GET_RHYMES',
+      rhymes: []
+    })
+
+    const { getByText, getByTestId } = testWrapper
+
+    const queriedWord = getByText('line')
+    const errorHandlingMessage = getByTestId('no-rhymes-message')
+
+    expect(queriedWord).toBeInTheDocument()
+    expect(errorHandlingMessage).toBeInTheDocument()
+  });
+
+  it('should have a link to return to the homepage', () => {
+    const { getByRole } = testWrapper
+
+    const homeLink = getByRole('link')
+
+    expect(homeLink).toBeInTheDocument()
+  })
 });

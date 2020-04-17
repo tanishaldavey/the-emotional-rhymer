@@ -1,5 +1,5 @@
 import React from 'react';
-import RecentSearches from '../../components/RecentSearches/RecentSearches';
+import RecentSearches from '../RecentSearches/RecentSearches';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './RecentSearchesContainer.css';

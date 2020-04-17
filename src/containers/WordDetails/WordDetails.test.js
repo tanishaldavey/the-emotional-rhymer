@@ -48,6 +48,19 @@ describe('WordDetails', () => {
   });
 
   it('should render a message letting a user know there are no examples of usage for the word they are getting the details for', () => {
+    testStore.dispatch({
+      type: 'GET_WORD_DETAILS',
+      wordDetails: {
+        word: 'show',
+        partOfSpeech: 'verb',
+        definition: 'give evidence of, as of records'
+      }
+    })
 
+    const { getByText, debug } = testWrapper
+
+    const errorHandlingMessage = getByText('We didn\'t find a usage example for this particular definition of show. Try refreshing the page for an updated definition.');
+
+    expect(errorHandlingMessage).toBeInTheDocument()
   });
 })

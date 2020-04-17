@@ -17,10 +17,14 @@ const RecentSearchesContainer = ({ recentSearches }) => {
       <Link to='/'>
         <p>Home</p>
       </Link>
-      {!recentSearches.length && <p>You haven't searched for anything yet.</p>}
-      <ul>
-        { allRecentSearches }
-      </ul>
+      {!recentSearches.length ?
+      <p>You haven't searched for anything yet.</p> :
+      <div>
+        <h3>You recently searched for:</h3>
+        <ul>
+          { allRecentSearches }
+        </ul>
+      </div>}
     </section>
   )
 }

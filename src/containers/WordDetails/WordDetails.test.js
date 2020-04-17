@@ -7,28 +7,32 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from '../../reducers';
 
-const testStore = createStore(rootReducer)
+let testStore, testWrapper;
 
-const testWrapper = render(
-  <Provider store={testStore}>
-    <BrowserRouter>
-      <WordDetails />
-    </BrowserRouter>
-  </Provider>
-)
+beforeEach(() => {
+  testStore = createStore(rootReducer)
 
-testStore.dispatch({
-  type: 'GET_WORD_DETAILS',
-  wordDetails: {
-    word: 'show',
-    partOfSpeech: 'verb',
-    definition: 'give evidence of, as of records',
-    examples: ['The diary shows his distress that evening']
-  }
+  testWrapper = render(
+    <Provider store={testStore}>
+      <BrowserRouter>
+        <WordDetails />
+      </BrowserRouter>
+    </Provider>
+  )
 })
 
 describe('WordDetails', () => {
   it('should render word details to the page', ()=> {
+    testStore.dispatch({
+      type: 'GET_WORD_DETAILS',
+      wordDetails: {
+        word: 'show',
+        partOfSpeech: 'verb',
+        definition: 'give evidence of, as of records',
+        examples: ['The diary shows his distress that evening']
+      }
+    })
+
     const { getByText } = testWrapper
 
     const word = getByText('show')
@@ -40,5 +44,10 @@ describe('WordDetails', () => {
     expect(partOfSpeech).toBeInTheDocument()
     expect(definition).toBeInTheDocument()
     expect(example).toBeInTheDocument()
-  })
+
+  });
+
+  it('should render a message letting a user know there are no examples of usage for the word they are getting the details for', () => {
+
+  });
 })

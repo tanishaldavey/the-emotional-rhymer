@@ -76,7 +76,7 @@ describe('RhymesContainer', () => {
   it('should have a link to return to the homepage', () => {
     const { getByRole } = testWrapper
 
-    const homeLink = getByRole('link', 'Home')
+    const homeLink = getByRole('link', {'name': 'Home'})
 
     expect(homeLink).toBeInTheDocument()
   })

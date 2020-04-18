@@ -51,7 +51,7 @@ describe('RecentSearchesContainer', () => {
   it('should render a link to go to the homepage', () => {
     const { getByRole } = testWrapper
 
-    const homeLink = getByRole('link', 'Home')
+    const homeLink = getByRole('link', {'name': 'Home'})
 
     expect(homeLink).toBeInTheDocument();
   })

@@ -10,11 +10,11 @@ export const findRhymingWords = async (word) => {
 
 export const findWordDetails = async (word) => {
   try {
-    let response = await fetch(`https://wordsapiv1.p.mashape.com/words/${word}`, {
+    let response = await fetch(`https://lingua-robot.p.rapidapi.com/language/v1/entries/en/${word}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'X-Mashape-Key': '0c23c2afbdmsh9b5a46a83cc75e1p1e9e8ejsn569db86987ef'
+        'X-Rapidapi-key': '0c23c2afbdmsh9b5a46a83cc75e1p1e9e8ejsn569db86987ef'
       }
     })
     return await response.json()

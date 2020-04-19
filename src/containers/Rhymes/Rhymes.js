@@ -11,7 +11,6 @@ const Rhymes = ({ rhyme, getWordDetails, queriedWord }) => {
     findWordDetails(rhyme)
       .then(details => {
         const randomIndex = Math.floor(Math.random() * details.entries[0].lexemes[0].senses.length)
-        console.log(randomIndex);
         const modifiedDetails = {
           word: details.entries[0].lexemes[0].lemma,
           partOfSpeech: details.entries[0].lexemes[0].partOfSpeech,

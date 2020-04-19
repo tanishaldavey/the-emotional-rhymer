@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './WordDetails.css';
 
 const WordDetails = ({ wordDetails }) => {
@@ -24,3 +25,7 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(WordDetails)
+
+WordDetails.propTypes = {
+  wordDetails: PropTypes.objectOf(PropTypes.string)
+}

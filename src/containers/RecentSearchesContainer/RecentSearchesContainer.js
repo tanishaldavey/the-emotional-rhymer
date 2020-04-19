@@ -2,6 +2,7 @@ import React from 'react';
 import RecentSearches from '../RecentSearches/RecentSearches';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './RecentSearchesContainer.css';
 
 const RecentSearchesContainer = ({ recentSearches }) => {
@@ -34,3 +35,7 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(RecentSearchesContainer);
+
+RecentSearchesContainer.propTypes = {
+  recentSearches: PropTypes.array
+}

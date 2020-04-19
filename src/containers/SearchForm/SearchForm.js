@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { findRhymingWords } from '../../apiCalls';
 import { getRhymes, getQueriedWord, getRecentSearches } from '../../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './SearchForm.css';
 
 class SearchForm extends Component {
@@ -101,3 +102,10 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
+
+SearchForm.propTypes = {
+  recentSearches: PropTypes.array,
+  getRhymes: PropTypes.func,
+  getQueriedWord: PropTypes.func,
+  getRecentSearches: PropTypes.func
+}

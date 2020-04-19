@@ -1,8 +1,10 @@
 import React from 'react';
 import Rhymes from '../Rhymes/Rhymes';
 import { Link } from 'react-router-dom';
-import './RhymesContainer.css';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import './RhymesContainer.css';
+
 
 const RhymesContainer = ({ rhymes, queriedWord }) => {
   const allRhymes = rhymes.map(rhyme => {
@@ -32,3 +34,8 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(RhymesContainer);
+
+RhymesContainer.propTypes = {
+  rhymes: PropTypes.array,
+  queriedWord: PropTypes.string
+}

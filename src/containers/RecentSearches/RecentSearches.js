@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { findRhymingWords } from '../../apiCalls';
 import { getRhymes, getQueriedWord } from '../../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './RecentSearches.css';
 
 const RecentSearches = ({ recentSearch, getQueriedWord, getRhymes }) => {
@@ -25,3 +26,9 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(RecentSearches);
+
+RecentSearches.propTypes = {
+  recentSearch: PropTypes.string,
+  getQueriedWord: PropTypes.func,
+  getRhymes: PropTypes.func
+};

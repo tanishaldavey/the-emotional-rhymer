@@ -23,6 +23,18 @@ beforeEach(() => {
 
 describe('Rhymes', () => {
   it('should render the correct rhyme to the page', () => {
+    const { getByText } = testWrapper
 
+    const rhyme = getByText('glow')
+
+    expect(rhyme).toBeInTheDocument();
+  });
+
+  it('should be a link', () => {
+    const { getByRole } = testWrapper
+
+    const rhymeLink = getByRole('link', {name: 'glow'})
+
+    expect(rhymeLink).toBeInTheDocument();
   });
 });

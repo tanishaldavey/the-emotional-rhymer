@@ -15,7 +15,8 @@ beforeEach(() => {
   testWrapper = render(
     <Provider store={testStore}>
       <BrowserRouter>
-        <RecentSearches />
+        <RecentSearches
+          recentSearch={'shame'}/>
       </BrowserRouter>
     </Provider>
   )
@@ -23,6 +24,18 @@ beforeEach(() => {
 
 describe('RecentSearches', () => {
   it('should render the correct rhyme to the page', () => {
+    const { getByText } = testWrapper
 
+    const recentSearchValue = getByText('shame')
+
+    expect(recentSearchValue).toBeInTheDocument();
+  });
+
+  it('should be a link', () => {
+    const { getByRole } = testWrapper
+
+    const recentSearchLink = getByRole('link', {name: 'shame'})
+
+    expect(recentSearchLink).toBeInTheDocument();
   });
 });

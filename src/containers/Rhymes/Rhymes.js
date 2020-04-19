@@ -10,16 +10,17 @@ const Rhymes = ({ rhyme, getWordDetails, queriedWord }) => {
   const updateWordDetails = () => {
     findWordDetails(rhyme)
       .then(details => {
-        const randomIndex = Math.floor(Math.random() * details.results.length)
+        const randomIndex = Math.floor(Math.random() * details.entries[0].lexemes[0].senses.length)
         const modifiedDetails = {
-          word: details.word,
-          partOfSpeech: details.results[randomIndex].partOfSpeech,
-          definition: details.results[randomIndex].definition,
-          examples: details.results[randomIndex].examples
-        }
+          word: details.entries[0].lexemes[0].lemma,
+          partOfSpeech: details.entries[0].lexemes[0].partOfSpeech,
+          definition: details.entries[0].lexemes[0].senses[randomIndex].definition,
+          examples: details.entries[0].lexemes[0].senses[randomIndex].usageExamples
+      }
         getWordDetails(modifiedDetails)
       })
   }
+
   return(
     <Link to={`/${queriedWord}/rhymes/${rhyme}/word-details`}>
       <li onClick={updateWordDetails}>{rhyme}</li>

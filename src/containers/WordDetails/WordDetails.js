@@ -27,5 +27,5 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps)(WordDetails)
 
 WordDetails.propTypes = {
-  wordDetails: PropTypes.objectOf(PropTypes.string)
+  wordDetails: PropTypes.object
 }

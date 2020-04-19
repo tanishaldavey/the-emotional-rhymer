@@ -1,7 +1,7 @@
 import React from 'react';
 import RecentSearches from './RecentSearches';
 import { BrowserRouter } from 'react-router-dom';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';

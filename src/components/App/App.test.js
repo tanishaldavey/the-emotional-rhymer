@@ -10,7 +10,7 @@ import { findRhymingWords, findWordDetails } from '../../apiCalls';
 
 jest.mock('../../apiCalls')
 
-let testStore, testWrapper, rhymes;
+let testStore, testWrapper, rhymes, wordDetailsWithExamples, wordDetailsWithoutExamples;
 
 beforeEach(() => {
   testStore = createStore(rootReducer)
@@ -38,6 +38,19 @@ beforeEach(() => {
     "score": 1198,
     "numSyllables": 2
   }]
+
+  wordDetailsWithExamples = {
+    word: 'dispaly',
+    partOfSpeech: 'verb',
+    definition: 'to show, make visible or apparent',
+    examples: ['National leaders will have to display the highest skills of statesmanship']
+  }
+
+  wordDetailsWithoutExamples = {
+    word: 'betray',
+    partOfSpeech: 'verb',
+    definition: 'disappoint, prove undependable to; abandon, forsake'
+  }
 })
 
 describe('App', () => {
@@ -52,10 +65,16 @@ describe('App', () => {
 
     fireEvent.change(input, { target: {value: 'stay' }})
     fireEvent.click(submitBtn)
- 
+
     const rhymesFound = await waitFor(() => getByText('display', 'betray', 'portray'))
 
     expect(rhymesFound).toBeInTheDocument()
+  });
+
+  it('should be able to get word details after clicking on a word from the rhymes list', async () => {
+
+
+
   });
 
 });

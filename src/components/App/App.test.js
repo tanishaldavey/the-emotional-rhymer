@@ -40,7 +40,7 @@ beforeEach(() => {
   }]
 
   wordDetailsWithExamples = {
-    word: 'dispaly',
+    word: 'display',
     partOfSpeech: 'verb',
     definition: 'to show, make visible or apparent',
     examples: ['National leaders will have to display the highest skills of statesmanship']
@@ -71,10 +71,45 @@ describe('App', () => {
     expect(rhymesFound).toBeInTheDocument()
   });
 
-  it('should be able to get word details after clicking on a word from the rhymes list', async () => {
+  it('should be able to get word details after clicking on a word from the rhymes list including examples of usage', async () => {
 
+    findRhymingWords.mockResolvedValue(rhymes)
 
+    const { getByText, getByPlaceholderText, getByRole } = testWrapper
 
+    const input = getByPlaceholderText('What word rhymes with...')
+    const submitBtn = getByText('Submit')
+
+    fireEvent.change(input, { target: {value: 'stay' }})
+    fireEvent.click(submitBtn)
+
+    const rhymesFound = await waitFor(() => getByText('display', 'betray', 'portray'))
+
+    findWordDetails.mockResolvedValue(wordDetailsWithExamples)
+
+    const wordDetailsRetrieved = await waitFor(() => getByText('display', 'verb', 'to show, make visible or apparent', 'National leaders will have to display the highest skills of statesmanship'))
+
+    expect(wordDetailsRetrieved).toBeInTheDocument();
   });
 
+  it('should be able to get word details after clicking on a word from the rhymes list, but details doesn\'t include examples of usage', async () => {
+
+    findRhymingWords.mockResolvedValue(rhymes)
+
+    const { getByText, getByPlaceholderText, getByRole } = testWrapper
+
+    const input = getByPlaceholderText('What word rhymes with...')
+    const submitBtn = getByText('Submit')
+
+    fireEvent.change(input, { target: {value: 'stay' }})
+    fireEvent.click(submitBtn)
+
+    const rhymesFound = await waitFor(() => getByText('display', 'betray', 'portray'))
+
+    findWordDetails.mockResolvedValue(wordDetailsWithoutExamples)
+
+    const wordDetailsRetrieved = await waitFor(() => getByText('betray', 'verb', 'disappoint, prove undependable to; abandon, forsake', 'We didn\'t find a usage example for this particular definition of betray. Try refreshing the page for an updated definition.'))
+
+    expect(wordDetailsRetrieved).toBeInTheDocument();
+  });
 });

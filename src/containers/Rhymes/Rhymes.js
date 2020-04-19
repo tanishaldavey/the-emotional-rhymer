@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { findWordDetails } from '../../apiCalls';
 import { getWordDetails } from '../../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './Rhymes.css';
 
 const Rhymes = ({ rhyme, getWordDetails, queriedWord }) => {
@@ -35,3 +36,9 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Rhymes);
+
+Rhymes.propTypes = {
+  rhyme: PropTypes.string,
+  getWordDetails: PropTypes.func,
+  queriedWord: PropTypes.string
+}

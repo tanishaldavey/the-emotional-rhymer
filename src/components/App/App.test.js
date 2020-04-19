@@ -1,9 +1,29 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from '../../reducers';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+let testStore, testWrapper;
+
+beforeEach(() => {
+  testStore = createStore(rootReducer)
+
+  testWrapper = render(
+    <Provider store={testStore}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  )
+})
+
+describe('App', () => {
+  it('should render a header to the page', () => {
+
+  });
 });

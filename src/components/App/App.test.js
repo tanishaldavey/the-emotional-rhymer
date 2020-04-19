@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor, debug } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -96,7 +96,7 @@ describe('App', () => {
 
     findRhymingWords.mockResolvedValue(rhymes)
 
-    const { getByText, getByPlaceholderText, getByRole } = testWrapper
+    const { getByText, getByPlaceholderText } = testWrapper
 
     const input = getByPlaceholderText('What word rhymes with...')
     const submitBtn = getByText('Submit')
@@ -111,5 +111,54 @@ describe('App', () => {
     const wordDetailsRetrieved = await waitFor(() => getByText('betray', 'verb', 'disappoint, prove undependable to; abandon, forsake', 'We didn\'t find a usage example for this particular definition of betray. Try refreshing the page for an updated definition.'))
 
     expect(wordDetailsRetrieved).toBeInTheDocument();
+  });
+
+  it('should be able to a list of recent searchValues', () => {
+
+    const { getByText, getByPlaceholderText } = testWrapper
+
+    const input = getByPlaceholderText('What word rhymes with...')
+    const submitBtn = getByText('Submit')
+
+    fireEvent.change(input, { target: {value: 'stay' }})
+    fireEvent.click(submitBtn)
+    fireEvent.change(input, { target: {value: 'ornate' }})
+    fireEvent.click(submitBtn)
+    fireEvent.change(input, { target: {value: 'token' }})
+    fireEvent.click(submitBtn)
+
+    const recentSearchesBtn = getByText('Recent Searches')
+    fireEvent.click(recentSearchesBtn)
+
+    const recentSearchValues = getByText('token', 'ornate', 'stay')
+
+    expect(recentSearchValues).toBeInTheDocument();
+  });
+
+  it('should be able to click on a word from the recent searches list to obtain it\'s rhymes', async () => {
+
+    const { getByText, getByPlaceholderText } = testWrapper
+
+    const input = getByPlaceholderText('What word rhymes with...')
+    const submitBtn = getByText('Submit')
+
+    fireEvent.change(input, { target: {value: 'stay' }})
+    fireEvent.click(submitBtn)
+    fireEvent.change(input, { target: {value: 'ornate' }})
+    fireEvent.click(submitBtn)
+    fireEvent.change(input, { target: {value: 'token' }})
+    fireEvent.click(submitBtn)
+
+    const recentSearchesBtn = getByText('Recent Searches')
+    fireEvent.click(recentSearchesBtn)
+
+    const recentSearchValues = getByText('token', 'ornate', 'stay')
+    fireEvent.click(getByText('stay'))
+
+    findRhymingWords.mockResolvedValue(rhymes)
+
+    const rhymesFound = await waitFor(() => getByText('display', 'betray', 'portray'))
+
+    expect(rhymesFound).toBeInTheDocument();
   });
 });

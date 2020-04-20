@@ -17,7 +17,7 @@ class SearchForm extends Component {
 
   updateValue = e => {
     this.setState({ [e.target.name]: e.target.value })
-    // this.setState({ error: '' })
+    this.setState({ error: '' })
   }
 
   validateForm = e => {

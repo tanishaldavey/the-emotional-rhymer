@@ -22,3 +22,8 @@ export const updateRhymeErorr = rhymeError => ({
   type: 'UPDATE_RHYME_ERROR',
   rhymeError
 })
+
+export const updateWordDetailsError = wordDetailsError => ({
+  type:'UPDATE_WORD_DETAILS_ERROR',
+  wordDetailsError
+})

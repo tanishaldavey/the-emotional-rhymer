@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+body {
+  background: #61E8E1;
+}
+
 a {
   text-decoration: none;
 }

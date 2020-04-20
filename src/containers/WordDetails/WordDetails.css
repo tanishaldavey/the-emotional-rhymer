@@ -1,0 +1,16 @@
+/* STYLING FOR WORD DETAILS */
+.word-details {
+  background: #EAF2E3;
+  box-shadow: 4px 2px 2px 1px rgba(0, 0, 0, 0.07);
+  margin-top: 2%;
+  padding: 2%;
+}
+
+.word-details p {
+  font-size: 1.2em;
+  line-height: 1.7em;
+}
+
+h4 {
+  margin-top: 3%;
+}

@@ -13,12 +13,14 @@ const WordDetails = ({ wordDetails, errorMessage }) => {
         <Link to={`/${wordDetails.word}/rhymes`}>
           <p>Back</p>
         </Link>
-        <h3>{wordDetails.word}</h3>
-        <p>{wordDetails.partOfSpeech}</p>
-        <p>{wordDetails.definition}</p>
-        <p>Example of usage:</p>
-        {!Array.isArray(wordDetails.examples) && <p>We didn't find a usage example for this particular definition of {wordDetails.word}. Try refreshing the page for an updated definition.</p>}
-        <p>{wordDetails.examples}</p>
+        <div className='word-details'>
+          <h3>{wordDetails.word}</h3>
+          <h4>{wordDetails.partOfSpeech}</h4>
+          <p>{wordDetails.definition}</p>
+          <h4>Example of usage:</h4>
+          {!Array.isArray(wordDetails.examples) && <p>We didn't find a usage example for this particular definition of {wordDetails.word}. Try refreshing the page for an updated definition.</p>}
+          <p>{wordDetails.examples}</p>
+        </div>
       </section>
     }
     </section>

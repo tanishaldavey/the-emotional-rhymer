@@ -12,3 +12,8 @@ a {
 button {
   cursor: pointer;
 }
+
+h3 {
+  font-size: 2em;
+  margin: 1% 0;
+}

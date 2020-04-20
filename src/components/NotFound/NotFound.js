@@ -6,7 +6,7 @@ const NotFound = () => {
 
   return(
     <section className='not-found'>
-      <Link to='/' >
+      <Link to='/'>
         <p>Home</p>
       </Link>
       <p>We can't find the page you're looking for.</p>

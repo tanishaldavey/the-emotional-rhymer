@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { findRhymingWords } from '../../apiCalls';
-import { getRhymes, getQueriedWord, getRecentSearches } from '../../actions';
+import { getRhymes, getQueriedWord, getRecentSearches, updateError } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './SearchForm.css';
@@ -33,11 +33,11 @@ class SearchForm extends Component {
     this.updateRecentSearches()
     this.props.getQueriedWord(this.state.query)
     findRhymingWords(this.state.query)
-      .then(rhymesFound => {
-        if (!Array.isArray(rhymesFound)) {
-          console.log('nope!');
+      .then(data => {
+        if (!Array.isArray(data)) {
+          this.props.updateError({ data }.data)
         } else {
-          this.props.getRhymes(rhymesFound)
+          this.props.getRhymes(data)
         }
       })
       .then(this.clearInput())
@@ -104,7 +104,8 @@ const mapDispatchToProps = dispatch => ({
   getRhymes: allRhymes => dispatch( getRhymes(allRhymes) ),
   getQueriedWord: word => dispatch( getQueriedWord(word) ),
   getRecentSearches: recentSearchValue =>
-    dispatch( getRecentSearches(recentSearchValue) )
+    dispatch( getRecentSearches(recentSearchValue) ),
+  updateError: error => dispatch( updateError(error) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);

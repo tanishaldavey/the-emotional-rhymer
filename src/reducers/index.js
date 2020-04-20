@@ -3,14 +3,14 @@ import { rhymes } from './rhymes';
 import { queriedWord } from './queriedWord';
 import { wordDetails } from './wordDetails';
 import { recentSearches } from './recentSearch';
-import { error } from './error';
+import { rhymeError } from './error';
 
 const rootReducer = combineReducers({
   rhymes,
   queriedWord,
   wordDetails,
   recentSearches,
-  error
+  rhymeError
 });
 
 export default rootReducer;

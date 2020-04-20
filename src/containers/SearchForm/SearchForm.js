@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { findRhymingWords } from '../../apiCalls';
-import { getRhymes, getQueriedWord, getRecentSearches, updateError } from '../../actions';
+import { getRhymes, getQueriedWord, getRecentSearches, updateRhymeErorr } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './SearchForm.css';
@@ -105,7 +105,7 @@ const mapDispatchToProps = dispatch => ({
   getQueriedWord: word => dispatch( getQueriedWord(word) ),
   getRecentSearches: recentSearchValue =>
     dispatch( getRecentSearches(recentSearchValue) ),
-  updateError: error => dispatch( updateError(error) )
+  updateRhymeErorr: error => dispatch( updateRhymeErorr(error) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
@@ -115,5 +115,5 @@ SearchForm.propTypes = {
   getRhymes: PropTypes.func,
   getQueriedWord: PropTypes.func,
   getRecentSearches: PropTypes.func,
-  updateError: PropTypes.func
+  updateRhymeError: PropTypes.func
 }

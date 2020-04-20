@@ -33,7 +33,13 @@ class SearchForm extends Component {
     this.updateRecentSearches()
     this.props.getQueriedWord(this.state.query)
     findRhymingWords(this.state.query)
-      .then(rhymesFound => this.props.getRhymes(rhymesFound))
+      .then(rhymesFound => {
+        if (!Array.isArray(rhymesFound)) {
+          console.log('nope!');
+        } else {
+          this.props.getRhymes(rhymesFound)
+        }
+      })
       .then(this.clearInput())
       .catch(error => console.log(error.message))
   }

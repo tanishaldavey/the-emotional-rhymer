@@ -8,7 +8,7 @@ import './WordDetails.css';
 const WordDetails = ({ wordDetails, errorMessage }) => {
   return(
     <section>
-    {!Array.isArray(errorMessage) ? <NotFound /> :
+    {errorMessage ? <NotFound /> :
       <section>
         <Link to={`/${wordDetails.word}/rhymes`}>
           <p>Back</p>

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './RhymesContainer.css';
 
-const RhymesContainer = ({ rhymes, queriedWord, error }) => {
+const RhymesContainer = ({ rhymes, queriedWord, errorMessage }) => {
   const allRhymes = rhymes.map(rhyme => {
     return <Rhymes
       key={rhyme.score}
@@ -16,7 +16,7 @@ const RhymesContainer = ({ rhymes, queriedWord, error }) => {
 
   return(
     <section>
-    {error ? <NotFound /> :
+    {errorMessage ? <NotFound /> :
       <section>
         <Link to='/'>
           <p>Home</p>
@@ -35,7 +35,7 @@ const RhymesContainer = ({ rhymes, queriedWord, error }) => {
 const mapStateToProps = state => ({
   rhymes: state.rhymes,
   queriedWord: state.queriedWord,
-  error: state.error
+  errorMessage: state.errorMessage
 })
 
 export default connect(mapStateToProps)(RhymesContainer);
@@ -43,5 +43,5 @@ export default connect(mapStateToProps)(RhymesContainer);
 RhymesContainer.propTypes = {
   rhymes: PropTypes.array,
   queriedWord: PropTypes.string,
-  error: PropTypes.string
+  errorMessage: PropTypes.string
 }

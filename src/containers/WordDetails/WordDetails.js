@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './WordDetails.css';
 
-const WordDetails = ({ wordDetails, wordDetailsError }) => {
+const WordDetails = ({ wordDetails, errorMessage }) => {
   return(
     <section>
-    {!Array.isArray(wordDetailsError) ? <NotFound /> :
+    {!Array.isArray(errorMessage) ? <NotFound /> :
       <section>
         <Link to={`/${wordDetails.word}/rhymes`}>
           <p>Back</p>
@@ -27,11 +27,12 @@ const WordDetails = ({ wordDetails, wordDetailsError }) => {
 
 const mapStateToProps = state => ({
   wordDetails: state.wordDetails,
-  wordDetailsError: state.wordDetailsError
+  errorMessage: state.errorMessage
 })
 
 export default connect(mapStateToProps)(WordDetails)
 
 WordDetails.propTypes = {
   wordDetails: PropTypes.object,
+  errorMessage: PropTypes.string
 }

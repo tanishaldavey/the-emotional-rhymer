@@ -17,3 +17,8 @@ export const getRecentSearches = recentSearches => ({
   type:'GET_RECENT_SEARCHES',
   recentSearches
 })
+
+export const updateError = error => ({
+  type: 'UPDATE_ERROR',
+  error
+})

@@ -1,5 +1,4 @@
 /* STYLING FOR HOME PAGE CONTAINER */
 .home-page-container {
   grid-area: "homePageContainer";
-  border: 2px solid red;
 }

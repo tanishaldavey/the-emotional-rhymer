@@ -8,3 +8,7 @@ header p {
   font-style: italic;
   margin: 1% 0;
 }
+
+h1 {
+  padding-top: 5%;
+}

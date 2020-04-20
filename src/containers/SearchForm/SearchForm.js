@@ -70,7 +70,7 @@ class SearchForm extends Component {
   render() {
     return(
       <form>
-      {this.state.error && <p>{this.state.error}</p>}
+      {this.state.error && <p className='form-error-message'>{this.state.error}</p>}
         <input
           type='text'
           placeholder='What word rhymes with...'

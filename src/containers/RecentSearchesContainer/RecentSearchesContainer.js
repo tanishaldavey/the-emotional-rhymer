@@ -21,7 +21,7 @@ const RecentSearchesContainer = ({ recentSearches }) => {
       {!recentSearches.length ?
       <p>You haven't searched for anything yet.</p> :
       <div>
-        <h3>You recently searched for:</h3>
+        <h3 className='recent-searches-h3'>You recently searched for:</h3>
         <ul>
           { allRecentSearches }
         </ul>

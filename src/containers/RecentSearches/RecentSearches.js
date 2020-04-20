@@ -15,7 +15,7 @@ const RecentSearches = ({ recentSearch, getQueriedWord, getRhymes }) => {
 
   return(
     <Link to={`/${recentSearch}/rhymes`}>
-      <li onClick={findRhymes}>{ recentSearch }</li>
+      <li className='recent-search-link' onClick={findRhymes}>{ recentSearch }</li>
     </Link>
   )
 }

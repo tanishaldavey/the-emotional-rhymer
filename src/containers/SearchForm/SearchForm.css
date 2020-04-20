@@ -11,22 +11,40 @@ button {
 }
 
 input {
+  background: #EAF2E3;
   border-radius: 10px;
   font-size: 1em;
   padding: 1%;
 }
 
 button {
-  font-size: .8em;
+  font-size: 1em;
 }
 
 #submit {
+  background: #FF9509;
   border-radius: 50px;
+  color: #EAF2E3;
   padding: 1% 0;
   width: 40%;
+}
+
+#submit:hover {
+  background: #E2711D;
+  transform: scale(0.95);
 }
 
 #recent-searches {
   background: inherit;
   text-decoration: underline;
+}
+
+#recent-searches:hover {
+  background: #CC5803;
+  height: 2em;
+  width: 30%;
+}
+
+.form-error-message {
+  color: #FF2E00;
 }

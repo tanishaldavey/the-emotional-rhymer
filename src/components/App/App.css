@@ -5,10 +5,11 @@ main {
   background: lightblue;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10vw 15vw 25vw 50vw;
+  grid-template-rows: .5fr .5fr .5fr 3.8fr;
   grid-template-areas:
   "nav"
   "header"
   "searchForm"
   "container";
+  max-height: 100vh;
 }

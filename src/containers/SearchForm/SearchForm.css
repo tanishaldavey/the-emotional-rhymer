@@ -1,0 +1,4 @@
+/* STYLING FOR SEARCH FORM */
+form {
+  grid-area: searchForm;
+}

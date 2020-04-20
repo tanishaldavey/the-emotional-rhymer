@@ -1,0 +1,4 @@
+/* STYLING FOR HEADER AREA */
+header {
+  grid-area: header;
+}

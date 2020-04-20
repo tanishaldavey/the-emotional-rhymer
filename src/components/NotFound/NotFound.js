@@ -5,7 +5,7 @@ import './NotFound.css';
 const NotFound = () => {
 
   return(
-    <section>
+    <section className='not-found'>
       <Link to='/' >
         <p>Home</p>
       </Link>

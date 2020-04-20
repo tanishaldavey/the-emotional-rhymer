@@ -5,11 +5,11 @@ main {
   background: lightblue;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: .5fr .5fr .5fr 3.8fr;
+  grid-template-rows: 1.5fr 1fr 2fr 4.8fr;
   grid-template-areas:
   "nav"
   "header"
   "searchForm"
   "container";
-  max-height: 100vh;
+  padding: 5%;
 }

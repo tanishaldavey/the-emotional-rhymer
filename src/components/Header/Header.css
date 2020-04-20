@@ -1,4 +1,10 @@
 /* STYLING FOR HEADER AREA */
 header {
   grid-area: header;
+  margin: 8% 0 4% 0;
+}
+
+header p {
+  font-style: italic;
+  margin: 1% 0;
 }

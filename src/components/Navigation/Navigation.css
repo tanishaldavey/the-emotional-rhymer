@@ -2,3 +2,12 @@
 nav {
   grid-area: nav;
 }
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  list-style: none;
+}

@@ -5,7 +5,8 @@ import SearchForm from '../../containers/SearchForm/SearchForm'
 import RhymesContainer from '../../containers/RhymesContianer/RhymesContainer';
 import WordDetails from '../../containers/WordDetails/WordDetails';
 import RecentSearchesContainer from '../../containers/RecentSearchesContainer/RecentSearchesContainer';
-import { Route } from 'react-router-dom';
+import NotFound from '../NotFound/NotFound';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -13,10 +14,13 @@ function App() {
     <main className="App">
       <Navigation />
       <Header />
-      <SearchForm />
-      <Route exact path='/:word/rhymes' render={() => <RhymesContainer />} />
-      <Route exact path='/:word/rhymes/:otherWord/word-details' render={() => <WordDetails />} />
-      <Route path='/recentSearches' render={() => <RecentSearchesContainer />} />
+      <Switch>
+        <Route exact path='/' render={() => <SearchForm />} />
+        <Route exact path='/:word/rhymes' render={() => <RhymesContainer />} />
+        <Route path='/:word/rhymes/:otherWord/word-details' render={() => <WordDetails />} />
+        <Route path='/recentSearches' render={() => <RecentSearchesContainer />} />
+        <Route path='*' render={() => <NotFound />} />
+      </Switch>
     </main>
   );
 }

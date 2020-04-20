@@ -5,8 +5,8 @@ import './NotFound.css';
 const NotFound = () => {
 
   return(
-    <section>
-      <Link to='/' >
+    <section className='not-found'>
+      <Link to='/'>
         <p>Home</p>
       </Link>
       <p>We can't find the page you're looking for.</p>

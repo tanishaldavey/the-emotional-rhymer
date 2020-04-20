@@ -6,7 +6,7 @@ import './HomePageContainer.css';
 
 const HomePageContainer = () => {
   return (
-    <section>
+    <section className='home-page-container'>
       <Navigation />
       <Header />
       <SearchForm />

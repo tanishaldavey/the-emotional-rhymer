@@ -28,7 +28,7 @@ const Rhymes = ({ rhyme, getWordDetails, queriedWord, updateError }) => {
 
   return(
     <Link to={`/${queriedWord}/rhymes/${rhyme}/word-details`}>
-      <li onClick={updateWordDetails}>{rhyme}</li>
+      <li className='rhyme-link' onClick={updateWordDetails}>{rhyme}</li>
     </Link>
   )
 }

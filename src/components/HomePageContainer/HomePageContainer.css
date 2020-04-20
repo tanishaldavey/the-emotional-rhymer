@@ -1,0 +1,4 @@
+/* STYLING FOR HOME PAGE CONTAINER */
+.home-page-container {
+  grid-area: "homePageContainer";
+}

@@ -67,4 +67,17 @@ describe('actions', () => {
 
     expect(result).toEqual(expectedAction)
   });
+
+  it('should have a type of UPDATE_ERROR', () => {
+    const error = 'Your request was unsuccessful. Please try again.'
+
+    const expectedAction = {
+      type: 'UPDATE_ERROR',
+      errorMessage: error
+    }
+
+    const result = actions.updateError('Your request was unsuccessful. Please try again.')
+
+    expect(result).toEqual(expectedAction)
+  });
 });

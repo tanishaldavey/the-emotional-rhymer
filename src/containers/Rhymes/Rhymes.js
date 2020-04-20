@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { findWordDetails } from '../../apiCalls';
-import { getWordDetails, updateWordDetailsError } from '../../actions';
+import { getWordDetails, updateError } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Rhymes.css';
 
-const Rhymes = ({ rhyme, getWordDetails, queriedWord, updateWordDetailsError }) => {
+const Rhymes = ({ rhyme, getWordDetails, queriedWord, updateError }) => {
   const updateWordDetails = () => {
     findWordDetails(rhyme)
       .then(details => {
         if (typeof details === 'string') {
-          updateWordDetailsError(details)
+          updateError(details)
         } else {
           const randomIndex = Math.floor(Math.random() * details.entries[0].lexemes[0].senses.length)
           const modifiedDetails = {
@@ -39,7 +39,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getWordDetails: details => dispatch( getWordDetails(details) ),
-  updateWordDetailsError: error => dispatch( updateWordDetailsError(error) )
+  updateError: error => dispatch( updateError(error) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Rhymes);
@@ -48,5 +48,5 @@ Rhymes.propTypes = {
   rhyme: PropTypes.string,
   getWordDetails: PropTypes.func,
   queriedWord: PropTypes.string,
-  updateaWordDetailsError: PropTypes.func
+  updateError: PropTypes.func
 }

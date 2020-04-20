@@ -114,5 +114,6 @@ SearchForm.propTypes = {
   recentSearches: PropTypes.array,
   getRhymes: PropTypes.func,
   getQueriedWord: PropTypes.func,
-  getRecentSearches: PropTypes.func
+  getRecentSearches: PropTypes.func,
+  updateError: PropTypes.func
 }

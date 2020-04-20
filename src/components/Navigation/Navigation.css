@@ -1,8 +1,4 @@
 /* STYLING FOR NAVIGATION AREA */
-nav {
-  grid-area: nav;
-}
-
 nav ul {
   display: flex;
   justify-content: space-between;

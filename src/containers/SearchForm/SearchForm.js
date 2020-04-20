@@ -81,6 +81,7 @@ class SearchForm extends Component {
         />
         <Link to={`/${this.state.query}/rhymes`}>
           <button
+            id='submit'
             type='button'
             onClick={this.validateForm}
           >Submit
@@ -88,6 +89,7 @@ class SearchForm extends Component {
         </Link>
         <Link to='/recentSearches'>
           <button
+            id='recent-searches'
             type='button'
           >Recent Searches
           </button>

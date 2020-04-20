@@ -1,4 +1,32 @@
 /* STYLING FOR SEARCH FORM */
 form {
-  grid-area: searchForm;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+button {
+  border: none;
+  margin-bottom: 1.5%;
+}
+
+input {
+  border-radius: 10px;
+  font-size: 1em;
+  padding: 1%;
+}
+
+button {
+  font-size: .8em;
+}
+
+#submit {
+  border-radius: 50px;
+  padding: 1% 0;
+  width: 40%;
+}
+
+#recent-searches {
+  background: inherit;
+  text-decoration: underline;
 }

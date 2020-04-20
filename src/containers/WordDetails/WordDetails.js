@@ -8,7 +8,7 @@ import './WordDetails.css';
 const WordDetails = ({ wordDetails, wordDetailsError }) => {
   return(
     <section>
-    {wordDetailsError ? <NotFound /> :
+    {!Array.isArray(wordDetailsError) ? <NotFound /> :
       <section>
         <Link to={`/${wordDetails.word}/rhymes`}>
           <p>Back</p>
@@ -34,5 +34,4 @@ export default connect(mapStateToProps)(WordDetails)
 
 WordDetails.propTypes = {
   wordDetails: PropTypes.object,
-  wordDetailsError: PropTypes.string
 }

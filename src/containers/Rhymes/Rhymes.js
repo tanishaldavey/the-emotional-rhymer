@@ -10,7 +10,7 @@ const Rhymes = ({ rhyme, getWordDetails, queriedWord, updateWordDetailsError }) 
   const updateWordDetails = () => {
     findWordDetails(rhyme)
       .then(details => {
-        if (!details.entries) {
+        if (typeof details === 'string') {
           updateWordDetailsError(details)
         } else {
           const randomIndex = Math.floor(Math.random() * details.entries[0].lexemes[0].senses.length)

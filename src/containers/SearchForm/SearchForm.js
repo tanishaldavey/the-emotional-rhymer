@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { findRhymingWords } from '../../apiCalls';
-import { getRhymes, getQueriedWord, getRecentSearches } from '../../actions';
+import { getRhymes, getQueriedWord, getRecentSearches, updateRhymeErorr } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './SearchForm.css';
@@ -17,6 +17,7 @@ class SearchForm extends Component {
 
   updateValue = e => {
     this.setState({ [e.target.name]: e.target.value })
+    this.setState({ error: '' })
   }
 
   validateForm = e => {
@@ -33,7 +34,13 @@ class SearchForm extends Component {
     this.updateRecentSearches()
     this.props.getQueriedWord(this.state.query)
     findRhymingWords(this.state.query)
-      .then(rhymesFound => this.props.getRhymes(rhymesFound))
+      .then(data => {
+        if (!Array.isArray(data)) {
+          this.props.updateError({ data }.data)
+        } else {
+          this.props.getRhymes(data)
+        }
+      })
       .then(this.clearInput())
       .catch(error => console.log(error.message))
   }
@@ -98,7 +105,8 @@ const mapDispatchToProps = dispatch => ({
   getRhymes: allRhymes => dispatch( getRhymes(allRhymes) ),
   getQueriedWord: word => dispatch( getQueriedWord(word) ),
   getRecentSearches: recentSearchValue =>
-    dispatch( getRecentSearches(recentSearchValue) )
+    dispatch( getRecentSearches(recentSearchValue) ),
+  updateRhymeErorr: error => dispatch( updateRhymeErorr(error) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
@@ -107,5 +115,6 @@ SearchForm.propTypes = {
   recentSearches: PropTypes.array,
   getRhymes: PropTypes.func,
   getQueriedWord: PropTypes.func,
-  getRecentSearches: PropTypes.func
+  getRecentSearches: PropTypes.func,
+  updateRhymeError: PropTypes.func
 }

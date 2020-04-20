@@ -1,0 +1,9 @@
+/* STYLING FOR RHYMES */
+.rhymes-container {
+  overflow: scroll;
+}
+
+.rhymes-container h3 {
+  font-size: 2em;
+  margin: 1% 0;
+}

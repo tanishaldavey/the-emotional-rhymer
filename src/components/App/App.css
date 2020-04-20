@@ -2,7 +2,7 @@
   text-align: center;
 }
 main {
-  background: linear-gradient(to bottom right, #83D0C9, #00B2CA);
+  background: #61E8E1;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 30% 70%;

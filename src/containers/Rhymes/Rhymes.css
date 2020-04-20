@@ -1,6 +1,6 @@
 /* STYLING FOR RHYMES */
 .rhyme-link {
-  background: #FFFFFF;
+  background: #EAF2E3;
   box-shadow: 4px 2px 2px 1px rgba(0, 0, 0, 0.07);
   font-size: 1.25em;
   height: 2.5em;
@@ -11,6 +11,6 @@
 }
 
 .rhyme-link:hover {
-  background: #FBD1A2;
+  background: #F2CD60;
   transform: scale(0.98);
 }

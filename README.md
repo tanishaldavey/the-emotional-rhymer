@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The Emotional Rhymer
+Contributor: [Tanisha L Davey](https://github.com/tanishalatoya)
 
-## Available Scripts
+## Abstract
+**Technologies used:** _React, Redux, React Router, React Testing Library, Jest, Fetch API_
 
-In the project directory, you can run:
+The Emotional Rhymer is a React application that allows a user to search for rhymes to a word based on emotion. Additionally, the app can get the definition of a word returned from rhymes, and list the last 10 words a user has searched for. It uses the [Datamuse API](http://www.datamuse.com/api/) to find rhymes related to emotion, and the [Linqua Robot API](https://www.linguarobot.io/) to get the definition of the rhymes found. The app utilizes Redux as it's state controller, and the React Testing Library to test all the components.
 
-### `npm start`
+For additional details about this project's creation, see [here](https://gist.github.com/tanishalatoya/59b35b6a5e781b4a650d62d8959681b3).
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Key focal points of the app include:**
+* Utilizing the technologies mentioned above
+* Selecting a specific target, work within constraints to deliver a unique product that helps them in some way.
+* Display the data from the API in a way that applies directly to your audience.
+* The app must have the ability for users to store/manipulate the data displayed in the application, such as favoriting or adding to a list.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+* Initial State (_Note: The "NotFound" component is displaying in the initial state, but should not be. An issue is currently pulled out on this repo to address that._)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Screen Shot 2020-04-20 at 5 15 57 PM](https://user-images.githubusercontent.com/41553045/79809000-a350c280-832c-11ea-852b-1449a5b4af32.png)
 
-### `npm run build`
+* After a user has searched for rhymes
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Screen Shot 2020-04-20 at 5 16 16 PM](https://user-images.githubusercontent.com/41553045/79808999-a350c280-832c-11ea-8c39-ce7c0b4549e4.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* After a user has clicked on the word to get the definition, etc. of a word
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Screen Shot 2020-04-20 at 5 16 22 PM](https://user-images.githubusercontent.com/41553045/79808998-a2b82c00-832c-11ea-81b8-830e7f3093c3.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* After a user has clicked on the Recent Searches button
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Screen Shot 2020-04-20 at 5 16 53 PM](https://user-images.githubusercontent.com/41553045/79808997-a21f9580-832c-11ea-8a94-d0264625eef0.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Future Iterations
+* Add a favoriting feature for a user to be able to save favorite words searched for
+* Add a feature that allows a use to choose what part of speech they would like returned for the word details, if more than one part of speech is available.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+  #### Other Notes
+  For a complete list of issues on this site, see [here](https://github.com/tanishalatoya/the-soft-poet/issues).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

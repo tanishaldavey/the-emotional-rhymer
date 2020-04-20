@@ -40,9 +40,8 @@ button {
 }
 
 #recent-searches:hover {
-  background: #CC5803;
-  height: 2em;
-  width: 30%;
+  color: #E2711D;
+
 }
 
 .form-error-message {

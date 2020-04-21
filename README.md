@@ -14,6 +14,12 @@ For additional details about this project's creation, see [here](https://gist.gi
 * Display the data from the API in a way that applies directly to your audience.
 * The app must have the ability for users to store/manipulate the data displayed in the application, such as favoriting or adding to a list.
 
+## Installation
+1. Clone this repo
+1. `npm install`
+1. `cd` into directory
+1. `npm start`
+
 ## Screenshots
 
 * Initial State (_Note: The "NotFound" component is displaying in the initial state, but should not be. An issue is currently pulled out on this repo to address that._)

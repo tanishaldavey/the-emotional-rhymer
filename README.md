@@ -44,6 +44,6 @@ For additional details about this project's creation, see [here](https://gist.gi
 * Add a feature that allows a use to choose what part of speech they would like returned for the word details, if more than one part of speech is available.
 
 
-  #### Other Notes
+## Other Notes
   For a complete list of issues on this site, see [here](https://github.com/tanishalatoya/the-soft-poet/issues).
 

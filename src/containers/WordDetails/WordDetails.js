@@ -3,7 +3,7 @@ import NotFound from '../../components/NotFound/NotFound'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './WordDetails.css';
+import './WordDetails.scss';
 
 const WordDetails = ({ wordDetails, errorMessage }) => {
   return(

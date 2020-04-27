@@ -4,7 +4,7 @@ import NotFound from '../../components/NotFound/NotFound';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './RhymesContainer.css';
+import './RhymesContainer.scss';
 
 const RhymesContainer = ({ rhymes, queriedWord, errorMessage }) => {
   const allRhymes = rhymes.map(rhyme => {

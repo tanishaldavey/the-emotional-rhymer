@@ -4,7 +4,7 @@ import { findRhymingWords } from '../../apiCalls';
 import { getRhymes, getQueriedWord } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './RecentSearches.css';
+import './RecentSearches.scss';
 
 const RecentSearches = ({ recentSearch, getQueriedWord, getRhymes }) => {
   const findRhymes = () => {

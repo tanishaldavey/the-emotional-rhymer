@@ -4,7 +4,7 @@ import { findRhymingWords } from '../../apiCalls';
 import { getRhymes, getQueriedWord, getRecentSearches, updateError } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './SearchForm.css';
+import './SearchForm.scss';
 
 class SearchForm extends Component {
   constructor(props) {

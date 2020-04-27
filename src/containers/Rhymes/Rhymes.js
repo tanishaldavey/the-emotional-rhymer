@@ -4,7 +4,7 @@ import { findWordDetails } from '../../apiCalls';
 import { getWordDetails, updateError } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './Rhymes.css';
+import './Rhymes.scss';
 
 const Rhymes = ({ rhyme, getWordDetails, queriedWord, updateError }) => {
   const updateWordDetails = () => {

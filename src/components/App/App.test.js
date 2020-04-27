@@ -155,7 +155,7 @@ describe('App', () => {
     const recentSearchValues = getByText('token', 'ornate', 'stay')
     fireEvent.click(getByText('stay'))
 
-    // findRhymingWords.mockResolvedValue(rhymes)
+    findRhymingWords.mockResolvedValue(rhymes)
 
     const rhymesFound = await waitFor(() => getByText('display', 'betray', 'portray'))
 

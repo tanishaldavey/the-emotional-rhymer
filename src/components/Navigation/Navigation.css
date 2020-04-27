@@ -1,0 +1,24 @@
+/* STYLING FOR NAVIGATION AREA */
+nav {
+  font-size: 1.3em;
+  height: 10vw;
+  margin: 0;
+  padding: 2.5%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav a {
+  color: blue;
+}
+
+nav a:hover {
+  color: #F96900;
+}

@@ -1,4 +1,5 @@
 @import '../../styles/base.scss';
+@import '../../styles/mixins.scss';
 
 .App {
     border: 2px solid red;
@@ -11,5 +12,13 @@
         margin: 0 auto;
         max-width: 1000px;
         width: 70%;
-    } 
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
 }

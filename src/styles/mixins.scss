@@ -1,0 +1,8 @@
+@mixin centerTextWithFontSize($fontSize) {
+    font-size: $fontSize;
+    text-align: center;
+}
+
+@mixin sectionMarginBotton() {
+    margin-bottom: 3%;
+}

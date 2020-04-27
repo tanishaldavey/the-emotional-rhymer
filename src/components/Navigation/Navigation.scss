@@ -1,0 +1,14 @@
+/* STYLING FOR NAVIGATION AREA */
+
+@import '../../styles/mixins.scss';
+
+nav {
+    @include sectionMarginBotton();
+    background: #212D40;
+    height: 30%;
+    padding-left: 2em;
+}
+
+nav ul li {
+    color: #FFFFFF;
+}

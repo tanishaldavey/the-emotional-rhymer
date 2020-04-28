@@ -14,8 +14,8 @@ const RecentSearchesContainer = ({ recentSearches }) => {
     />
   })
   return(
-    <section>
-      <Link className='container-nav-link' to='/'>
+    <section className='recent-searches-container'>
+      <Link className='page-nav-link' to='/'>
         <p>Home</p>
       </Link>
       {!recentSearches.length ?

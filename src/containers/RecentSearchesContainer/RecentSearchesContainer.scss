@@ -1,1 +1,16 @@
+/* STYLES FOR RECENT SEARCHES CONTTIANER */
 
+@import '../../styles/mixins.scss';
+
+.recent-searches-container {
+    @include containerStyle();
+}
+
+.recent-searches-container ul li {
+    @include rhymesStyle();
+
+}
+
+.recent-searches-container ul li:hover {
+    @include rhymesHover();   
+}

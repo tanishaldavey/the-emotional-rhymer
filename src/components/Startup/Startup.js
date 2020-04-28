@@ -3,7 +3,7 @@ import './Startup.scss';
 
 const Startup = () => {
     return (
-        <section>
+        <section className='start-up'>
             <p>Begin by entering a word to search for in the input.</p>
         </section>
     )

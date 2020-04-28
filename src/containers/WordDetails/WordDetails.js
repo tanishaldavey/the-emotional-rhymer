@@ -9,8 +9,8 @@ const WordDetails = ({ wordDetails, errorMessage }) => {
   return(
     <section>
     {errorMessage ? <NotFound /> :
-      <section>
-        <Link to={`/${wordDetails.word}/rhymes`}>
+      <section className='word-details-container'>
+        <Link className='page-nav-link' id='word-details-nav' to={`/${wordDetails.word}/rhymes`}>
           <p>Back</p>
         </Link>
         <div className='word-details'>

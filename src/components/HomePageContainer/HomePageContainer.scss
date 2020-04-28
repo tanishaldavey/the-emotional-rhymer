@@ -1,0 +1,9 @@
+/* STYLING FOR HOME PAGE CONTAINER */
+/* This container holds the header, navigation, and search form */
+
+@import '../../styles/mixins.scss';
+
+.home-page-container {
+    @include sectionMarginBotton();
+    max-height: 40vh;
+}

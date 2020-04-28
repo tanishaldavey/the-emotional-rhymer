@@ -1,0 +1,17 @@
+/* STYLING FOR THE RHYMES CONTAINER */
+
+@import '../../styles/mixins.scss';
+
+.rhymes-container {
+    @include containerStyle();
+}
+
+.rhymes-container li {
+    @include centerTextWithFontSize(1.3em);
+    margin-bottom: 2%;
+}
+
+.rhymes-container li:hover {
+    color: #FF4646;
+    transform: scale(1.1);
+}

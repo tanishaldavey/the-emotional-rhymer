@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../Navigation/Navigation';
 import HomePageContainer from '../HomePageContainer/HomePageContainer';
+import Starup from '../../components/Startup/Startup';
 import RhymesContainer from '../../containers/RhymesContianer/RhymesContainer';
 import WordDetails from '../../containers/WordDetails/WordDetails';
 import RecentSearchesContainer from '../../containers/RecentSearchesContainer/RecentSearchesContainer';
@@ -14,6 +15,7 @@ const App = () => {
       <Navigation />
       <HomePageContainer />
       <Switch>
+        <Route exact path='/' render={() => <Starup />} />
         <Route exact path='/:word/rhymes' render={() => <RhymesContainer />} />
         <Route path='/:word/rhymes/:otherWord/word-details' render={() => <WordDetails />} />
         <Route path='/recentSearches' render={() => <RecentSearchesContainer />} />

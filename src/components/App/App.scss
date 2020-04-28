@@ -2,8 +2,9 @@
 @import '../../styles/mixins.scss';
 
 .App {
-    // border: 2px solid red;
+    background: linear-gradient(to bottom right, #FFFFFF, #EFEFEF);
     font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
     min-width: 375px;
     padding: 0 1em;
 }
@@ -25,6 +26,7 @@
 
     button {
         font-size: 1em;
+        margin: 1% auto;
     }
 
     h4 {
@@ -37,5 +39,9 @@
 
     .page-nav-link {
         font-size: 1.25em;
+    }
+
+    .start-up {
+        font-size: 1.2em;
     }
 }

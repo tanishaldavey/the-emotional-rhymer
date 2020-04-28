@@ -10,3 +10,14 @@
 @mixin containerStyle() {
     padding: 2em;
 }
+
+@mixin rhymesStyle() {
+    @include centerTextWithFontSize(1.3em);
+    margin-bottom: 2%;
+}
+
+@mixin rhymesHover() {
+    color: #FF4646;
+    transform: scale(1.1);
+}
+

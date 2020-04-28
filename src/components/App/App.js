@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from '../Navigation/Navigation';
 import HomePageContainer from '../HomePageContainer/HomePageContainer';
 import RhymesContainer from '../../containers/RhymesContianer/RhymesContainer';
 import WordDetails from '../../containers/WordDetails/WordDetails';
@@ -10,6 +11,7 @@ import './App.scss';
 const App = () => {
   return (
     <main className="App">
+      <Navigation />
       <HomePageContainer />
       <Switch>
         <Route exact path='/:word/rhymes' render={() => <RhymesContainer />} />

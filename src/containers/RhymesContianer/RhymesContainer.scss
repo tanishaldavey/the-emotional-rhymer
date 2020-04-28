@@ -1,0 +1,15 @@
+/* STYLING FOR THE RHYMES CONTAINER */
+
+@import '../../styles/mixins.scss';
+
+.rhymes-container {
+    @include containerStyle();
+}
+
+.rhymes-container li {
+    @include rhymesStyle()
+}
+
+.rhymes-container li:hover {
+    @include rhymesHover();    
+}

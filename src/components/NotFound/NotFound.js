@@ -1,15 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './NotFound.css';
+import error from '../../assets/error.svg';
+import './NotFound.scss';
 
 const NotFound = () => {
 
   return(
     <section className='not-found'>
-      <Link to='/'>
+      <Link className='page-nav-link' to='/'>
         <p>Home</p>
       </Link>
-      <p>We can't find the page you're looking for.</p>
+      <div>
+        <img src={error} alt='error icon'/>
+        <p>We can't find the page you're looking for.</p>
+      </div>
     </section>
   )
 }

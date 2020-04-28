@@ -4,7 +4,7 @@ import NotFound from '../../components/NotFound/NotFound';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './RhymesContainer.css';
+import './RhymesContainer.scss';
 
 const RhymesContainer = ({ rhymes, queriedWord, errorMessage }) => {
   const allRhymes = rhymes.map(rhyme => {
@@ -18,7 +18,7 @@ const RhymesContainer = ({ rhymes, queriedWord, errorMessage }) => {
     <section className='rhymes-container'>
     {errorMessage ? <NotFound /> :
       <section>
-        <Link to='/'>
+        <Link className='page-nav-link' to='/'>
           <p>Home</p>
         </Link>
         <h3>{ `${queriedWord}` }</h3>

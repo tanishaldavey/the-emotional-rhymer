@@ -1,0 +1,27 @@
+/* STYLING FOR NOT FOUND COMPONENT */
+
+@import '../../styles/mixins.scss';
+
+.not-found {
+    
+    @include containerStyle();
+}
+
+.not-found div {
+    // border: 2px solid red;
+    margin-top: 5%;
+}
+
+.not-found div p {
+    font-size: .9em;
+    margin-top: 5%;
+    text-align: center;
+}
+
+img {
+    display: block;
+    height: 10em;
+    margin: 0 auto;
+    opacity: 0.6;
+    width: auto;
+}

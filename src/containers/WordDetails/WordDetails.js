@@ -3,14 +3,14 @@ import NotFound from '../../components/NotFound/NotFound'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './WordDetails.css';
+import './WordDetails.scss';
 
 const WordDetails = ({ wordDetails, errorMessage }) => {
   return(
     <section>
     {errorMessage ? <NotFound /> :
-      <section>
-        <Link to={`/${wordDetails.word}/rhymes`}>
+      <section className='word-details-container'>
+        <Link className='page-nav-link' id='word-details-nav' to={`/${wordDetails.word}/rhymes`}>
           <p>Back</p>
         </Link>
         <div className='word-details'>

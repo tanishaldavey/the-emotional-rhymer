@@ -1,0 +1,41 @@
+@import '../../styles/base.scss';
+@import '../../styles/mixins.scss';
+
+.App {
+    // border: 2px solid red;
+    font-family: 'Roboto', sans-serif;
+    min-width: 375px;
+    padding: 0 1em;
+}
+
+@media screen and (min-width: 769px) {
+    .App {
+        margin: 0 auto;
+        max-width: 1000px;
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+
+    h4 {
+        font-size: 1.4em;
+    }
+
+    .word-details p {
+        font-size: 1.35em;
+    }
+
+    .page-nav-link {
+        font-size: 1.25em;
+    }
+}

@@ -1,0 +1,42 @@
+/* STYLING FOR SEARCH FORM */
+
+form {
+    // border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+}
+
+input,
+button {
+    border: 1px solid #212D40;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 2%;
+    padding: 1%;
+}
+
+button {    
+    font-size: .8em;
+    margin-left: 25%;
+    width: 40%;
+}
+
+button:hover {
+    transform: scale(1.01);
+}
+
+#submit {
+    background: #FF5858;
+    border: none;
+    color: #FFFFFF;
+}
+
+#submit:hover {
+    background: #E53F3F;
+}
+
+#recent-searches:hover {
+    border-color: #E53F3F;
+    color: #E53F3F;
+}

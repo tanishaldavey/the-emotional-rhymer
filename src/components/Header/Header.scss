@@ -1,0 +1,17 @@
+/* STYLING FOR HEADER AREA */
+
+@import '../../styles/mixins.scss';
+
+header {
+    @include sectionMarginBotton();
+}
+
+h1 {
+    @include centerTextWithFontSize(230%)
+    font-family: 'Flamenco', serif;
+}
+
+header p {
+    @include centerTextWithFontSize(90%)
+    font-style: italic;
+}

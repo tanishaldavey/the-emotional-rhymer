@@ -18,7 +18,7 @@ const RhymesContainer = ({ rhymes, queriedWord, errorMessage }) => {
     <section className='rhymes-container'>
     {errorMessage ? <NotFound /> :
       <section>
-        <Link to='/'>
+        <Link className='page-nav-link' to='/'>
           <p>Home</p>
         </Link>
         <h3>{ `${queriedWord}` }</h3>

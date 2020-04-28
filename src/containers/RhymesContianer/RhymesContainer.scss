@@ -7,11 +7,9 @@
 }
 
 .rhymes-container li {
-    @include centerTextWithFontSize(1.3em);
-    margin-bottom: 2%;
+    @include rhymesStyle()
 }
 
 .rhymes-container li:hover {
-    color: #FF4646;
-    transform: scale(1.1);
+    @include rhymesHover();    
 }

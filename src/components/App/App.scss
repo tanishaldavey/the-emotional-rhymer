@@ -4,6 +4,7 @@
 .App {
     border: 2px solid red;
     font-family: 'Roboto', sans-serif;
+    min-width: 375px;
     padding: 0 1em;
 }
 
@@ -20,5 +21,9 @@
 
     header p {
         font-size: 1.2em;
+    }
+
+    button {
+        font-size: 1em;
     }
 }

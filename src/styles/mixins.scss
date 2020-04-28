@@ -6,3 +6,7 @@
 @mixin sectionMarginBotton() {
     margin-bottom: 3%;
 }
+
+@mixin containerStyle() {
+    padding: 2em;
+}

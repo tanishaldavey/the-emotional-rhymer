@@ -14,3 +14,7 @@
 .recent-searches-container ul li:hover {
     @include rhymesHover();   
 }
+
+.recent-searches-h3 {
+    font-size: 1.4em;
+}

@@ -3,3 +3,9 @@ node_js:
   - "node"
 notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: FoUDGxny9mlpl7GGYMdHA
+  app: the-emotional-rhymer
+  skip_cleanup: true

@@ -5,6 +5,7 @@ notifications:
   email: false
 deploy:
   api_key:
+    provider: heroku
     secure: wVrn5gbsImSHvJcnJ3VYyKDqY7p9L0M1Jvy6hfiLjZAsEq0pnlHlnzpuqzZ3IVUzbck2OLAl3+IrUT5pU2z6NX05VrvDiVDu0VvA8fAl5wcTxOeDzGNxrR+XR0M37TW/vdAVwbm0uoepw9lPZb5sqRtm0ww0A7om+ROK3BuCV7YKLAYB4rW6F/laGz7jJEgXrzhTDW9g7UHhczFWb5SlfxmZ6PSiFPlea5+JhMC85VF4RyA++Eiy4eTfMiXmIGjPjFBziaghtKg9umxIAepBtXSTDL0Jpw4rtovJ0gQrf5Yg/2WeR+kybng6fNkIlPiX4+Cc81tsUV9u2takYRJe0o2pmwQRpELIVXobS/fuNaJoj8G5k0OLABkR5MgBd5lBIj0rPsipuNlHMaeLhYjwGQQzxczqW8WgYyW5FqNi7GUX1vn9+sYoWFsytjkqxvK1kEbtNs5k1fWTDAcj+Mggd6E/TejyL2BzbnzYaZ09v61a3DMx9FqaGJ/4PFCdPLjmD7FUGhpO3fREyv6W1+AoHf/fthnf+0a320IQgx5Z+4MFFDBoZXK6RXplCIMbYSqPxCIw91vZFy4Giuk+5oDtDfrJ0Oku0GXPOkkwSp+4jcdc/mdvNo0W/gMoCXD9TGrI/v1gbwruLBu60xynCUbx4pGpJJ+xYRg3+4S+SfOzkbM=
   app: the-emotional-rhymer
   skip_cleanup: true

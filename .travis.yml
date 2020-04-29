@@ -6,6 +6,6 @@ notifications:
 deploy:
   provider: heroku
   api_key:
-    secure: 5adeb812-881f-45e2-968d-2ca3f9282233
+    secure: f2d601a2-5fc2-4a6e-b00d-800e3fa6d606
   app: the-emotional-rhymer
   skip_cleanup: true

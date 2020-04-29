@@ -13,6 +13,7 @@
 
 # misc
 .DS_Store
+.travis.yml
 .env
 .env.local
 .env.development.local

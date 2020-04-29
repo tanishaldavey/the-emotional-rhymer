@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "node"
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: 5adeb812-881f-45e2-968d-2ca3f9282233
+  app: the-emotional-rhymer
+  skip_cleanup: true

@@ -12,13 +12,13 @@ export const findRhymingWords = async (word) => {
   }
 }
 
-export const findWordDetails = async (word) => {
+export const findWordDetails = async (word, key) => {
   try {
     let response = await fetch(`https://lingua-robot.p.rapidapi.com/language/v1/entries/en/${word}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'X-Rapidapi-key': '0c23c2afbdmsh9b5a46a83cc75e1p1e9e8ejsn569db86987ef'
+        'X-Rapidapi-key': key
       }
     })
     if (!response.ok) {

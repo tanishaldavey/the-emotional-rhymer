@@ -8,7 +8,7 @@ import './Rhymes.scss';
 
 const Rhymes = ({ rhyme, getWordDetails, queriedWord, updateError }) => {
   const updateWordDetails = () => {
-    findWordDetails(rhyme)
+    findWordDetails(rhyme, process.env.REACT_APP_API_KEY)
       .then(details => {
         if (typeof details === 'string') {
           updateError(details)

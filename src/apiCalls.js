@@ -12,8 +12,8 @@ export const findRhymingWords = async (word) => {
   }
 }
 
-export const findWordDetails = async (word, key) => {
-  console.log(`${process.env.REACT_APP_API_KEY}` === true)
+export const findWordDetails = async (word) => {
+  console.log(process.env.REACT_APP_API_KEY)
   try {
     let response = await fetch(`https://lingua-robot.p.rapidapi.com/language/v1/entries/en/${word}`, {
       method: 'GET',

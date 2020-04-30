@@ -13,13 +13,13 @@ export const findRhymingWords = async (word) => {
 }
 
 export const findWordDetails = async (word, key) => {
-  console.log('helllloooo', `${process.env.REACT_APP_API_KEY}`)
+  console.log(`${process.env.REACT_APP_API_KEY}` === true)
   try {
     let response = await fetch(`https://lingua-robot.p.rapidapi.com/language/v1/entries/en/${word}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'X-Rapidapi-key': key
+        'X-Rapidapi-key': `${process.env.REACT_APP_API_KEY}`
       }
     })
     if (!response.ok) {

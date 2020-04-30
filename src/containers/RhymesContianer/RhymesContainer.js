@@ -16,7 +16,7 @@ const RhymesContainer = ({ rhymes, queriedWord, errorMessage }) => {
 
   return(
     <section className='rhymes-container'>
-    {errorMessage ? <NotFound /> :
+    {!rhymes.length && errorMessage ? <NotFound /> :
       <section>
         <Link className='page-nav-link' to='/'>
           <p>Home</p>

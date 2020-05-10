@@ -4,6 +4,7 @@ import { queriedWord } from './queriedWord';
 import { wordDetails } from './wordDetails';
 import { recentSearches } from './recentSearch';
 import { errorMessage } from './errorMessage';
+import { isLoaded } from './isLoaded';
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
   queriedWord,
   wordDetails,
   recentSearches,
-  errorMessage
+  errorMessage,
+  isLoaded
 });
 
 export default rootReducer;

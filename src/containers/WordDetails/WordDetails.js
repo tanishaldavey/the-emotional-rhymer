@@ -7,8 +7,6 @@ import PropTypes from 'prop-types';
 import './WordDetails.scss';
 
 const WordDetails = ({ wordDetails, errorMessage, isLoaded }) => {
-  console.log(isLoaded);
-  
   return(
     <section>
     {!isLoaded && <LoadingIndicator />}

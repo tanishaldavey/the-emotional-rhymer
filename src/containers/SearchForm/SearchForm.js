@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { findRhymingWords } from '../../apiCalls';
-import { getRhymes, getQueriedWord, getRecentSearches, updateError } from '../../actions';
+import { getRhymes, getQueriedWord, getRecentSearches, updateError, udpateLoadingStatus } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './SearchForm.scss';
@@ -37,11 +37,14 @@ class SearchForm extends Component {
       .then(data => {
         if (!Array.isArray(data)) {
           this.props.updateError({ data }.data)
+          this.props.udpateLoadingStatus(true)
         } else {
           this.props.getRhymes(data)
+          this.props.udpateLoadingStatus(true)
         }
       })
       .then(this.clearInput())
+      .then(this.props.udpateLoadingStatus(false))
       .catch(error => console.log(error.message))
   }
 
@@ -108,7 +111,8 @@ const mapDispatchToProps = dispatch => ({
   getQueriedWord: word => dispatch( getQueriedWord(word) ),
   getRecentSearches: recentSearchValue =>
     dispatch( getRecentSearches(recentSearchValue) ),
-  updateError: error => dispatch( updateError(error) )
+  updateError: error => dispatch( updateError(error) ),
+  udpateLoadingStatus: status => dispatch( udpateLoadingStatus(status) )
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
@@ -118,5 +122,6 @@ SearchForm.propTypes = {
   getRhymes: PropTypes.func,
   getQueriedWord: PropTypes.func,
   getRecentSearches: PropTypes.func,
-  updateError: PropTypes.func
+  updateError: PropTypes.func,
+  udpateLoadingStatus: PropTypes.func
 }

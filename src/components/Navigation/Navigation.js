@@ -6,11 +6,8 @@ const Navigation = () => {
   return(
     <nav>
       <ul>
-      <Link to='/'>
+      <Link className='nav-about' to='/'>
         <li>About</li>
-      </Link>
-      <Link to='/'>
-        <li>Contact</li>
       </Link>
       </ul>
     </nav>

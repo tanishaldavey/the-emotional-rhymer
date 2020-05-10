@@ -11,10 +11,9 @@ describe('Navigation', () => {
     </BrowserRouter>)
 
     const about =getByText('About')
-    const contact =getByText('Contact')
 
     expect(about).toBeInTheDocument()
-    expect(contact).toBeInTheDocument()
+
   });
 
   it('should contain links to "about" and "contact"', () => {
@@ -23,9 +22,7 @@ describe('Navigation', () => {
     </BrowserRouter>)
 
     const about =getByRole('link', {'name': 'About'})
-    const contact =getByRole('link', {'name': 'Contact'})
 
     expect(about).toBeInTheDocument()
-    expect(contact).toBeInTheDocument()
   });;
 })

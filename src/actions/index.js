@@ -22,3 +22,8 @@ export const updateError = errorMessage => ({
   type: 'UPDATE_ERROR',
   errorMessage
 })
+
+export const udpateLoadingStatus = (isLoaded = true) => ({
+  type: 'UPDATE_LOADING_STATUS',
+  isLoaded
+})

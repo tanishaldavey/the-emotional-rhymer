@@ -1,13 +1,17 @@
 import React from 'react';
 import NotFound from '../../components/NotFound/NotFound'
+import LoadingIndicator from '../../components/LoadingIndicator/LoadingIndicator';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './WordDetails.scss';
 
-const WordDetails = ({ wordDetails, errorMessage }) => {
+const WordDetails = ({ wordDetails, errorMessage, isLoaded }) => {
+  console.log(isLoaded);
+  
   return(
     <section>
+    {!isLoaded && <LoadingIndicator />}
     {errorMessage ? <NotFound /> :
       <section className='word-details-container'>
         <Link className='page-nav-link' id='word-details-nav' to={`/${wordDetails.word}/rhymes`}>
@@ -29,7 +33,8 @@ const WordDetails = ({ wordDetails, errorMessage }) => {
 
 const mapStateToProps = state => ({
   wordDetails: state.wordDetails,
-  errorMessage: state.errorMessage
+  errorMessage: state.errorMessage,
+  isLoaded: state.isLoaded
 })
 
 export default connect(mapStateToProps)(WordDetails)

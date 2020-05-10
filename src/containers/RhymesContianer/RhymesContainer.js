@@ -20,7 +20,7 @@ const RhymesContainer = ({ rhymes, queriedWord, errorMessage, isLoaded }) => {
   return(
     <section className='rhymes-container'>
     {!isLoaded && <LoadingIndicator />}
-    {errorMessage ? <NotFound /> :
+    {!rhymes.length && errorMessage ? <NotFound /> :
       <section>
         <Link className='page-nav-link' to='/'>
           <p>Home</p>

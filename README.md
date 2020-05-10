@@ -24,26 +24,26 @@ For additional details about this project's creation, see [here](https://gist.gi
 
 * Initial State (_Note: The "NotFound" component is displaying in the initial state, but should not be. An issue is currently pulled out on this repo to address that._)
 
-![Screen Shot 2020-04-20 at 5 15 57 PM](https://user-images.githubusercontent.com/41553045/79809000-a350c280-832c-11ea-852b-1449a5b4af32.png)
+![Screen Shot 2020-04-27 at 8 29 35 PM](https://user-images.githubusercontent.com/41553045/80440443-08c12800-88c6-11ea-8049-5c52ea15c9c1.png)
+
 
 * After a user has searched for rhymes
 
-![Screen Shot 2020-04-20 at 5 16 16 PM](https://user-images.githubusercontent.com/41553045/79808999-a350c280-832c-11ea-8c39-ce7c0b4549e4.png)
+![Screen Shot 2020-04-27 at 8 29 42 PM](https://user-images.githubusercontent.com/41553045/80440453-0d85dc00-88c6-11ea-8cd6-9db0eb3ea7da.png)
+
 
 * After a user has clicked on the word to get the definition, etc. of a word
 
-![Screen Shot 2020-04-20 at 5 16 22 PM](https://user-images.githubusercontent.com/41553045/79808998-a2b82c00-832c-11ea-81b8-830e7f3093c3.png)
+![Screen Shot 2020-04-27 at 8 29 52 PM](https://user-images.githubusercontent.com/41553045/80440460-11196300-88c6-11ea-8e7d-076ce0935cb7.png)
+
 
 
 * After a user has clicked on the Recent Searches button
 
-![Screen Shot 2020-04-20 at 5 16 53 PM](https://user-images.githubusercontent.com/41553045/79808997-a21f9580-832c-11ea-8a94-d0264625eef0.png)
+![Screen Shot 2020-04-27 at 8 30 16 PM](https://user-images.githubusercontent.com/41553045/80440470-14acea00-88c6-11ea-9071-45ea5e1f3d31.png)
+
+
 
 ## Future Iterations
 * Add a favoriting feature for a user to be able to save favorite words searched for
 * Add a feature that allows a use to choose what part of speech they would like returned for the word details, if more than one part of speech is available.
-
-
-## Other Notes
-  For a complete list of issues on this site, see [here](https://github.com/tanishalatoya/the-soft-poet/issues).
-

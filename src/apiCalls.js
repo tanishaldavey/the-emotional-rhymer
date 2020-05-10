@@ -1,3 +1,5 @@
+import { privateKey } from './utils';
+
 export const findRhymingWords = async (word) => {
   try {
     let response = await fetch(`https://api.datamuse.com/words?ml=emotion&rel_rhy=${word}`)
@@ -18,7 +20,7 @@ export const findWordDetails = async (word) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'X-Rapidapi-key': '0c23c2afbdmsh9b5a46a83cc75e1p1e9e8ejsn569db86987ef'
+        'X-Rapidapi-key': privateKey
       }
     })
     if (!response.ok) {

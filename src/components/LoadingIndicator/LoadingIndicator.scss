@@ -1,0 +1,43 @@
+  .shape {
+    cy: 50;
+    r: 10;
+      animation: moveCircle 1250ms ease-in-out both infinite;
+  }
+  
+  .shape:nth-child(1) {
+    cx: 60;
+    fill: #212D40;
+      animation-delay: 100ms;
+  }
+  
+  .shape:nth-child(2) {
+    cx: 120;
+    fill: #434C5B;
+      animation-delay: 200ms;
+  }
+  
+  .shape:nth-child(3) {
+    cx: 180;
+    fill: #666C75;
+      animation-delay: 300ms;
+  }
+  
+  .shape:nth-child(4) {
+    cx: 240;
+    fill: #888B90;
+      animation-delay: 400ms;
+  }
+  
+  .shape:nth-child(5) {
+    cx: 300;
+    fill: #AAAAAA;
+      animation-delay: 500ms;
+  }
+  
+  @keyframes moveCircle {
+    50% {
+      r: 12;
+    }
+  }
+  
+  

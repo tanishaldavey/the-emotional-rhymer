@@ -37,6 +37,7 @@ class SearchForm extends Component {
       .then(data => {
         if (!Array.isArray(data)) {
           this.props.updateError({ data }.data)
+          this.props.udpateLoadingStatus(true)
         } else {
           this.props.getRhymes(data)
           this.props.udpateLoadingStatus(true)
